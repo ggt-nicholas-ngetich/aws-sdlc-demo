@@ -1,10 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: /app
-    destination: /home/ec2-user/app
-  - source: /scripts
-    destination: /home/ec2-user/app/scripts
+  - source: /
+    destination: /home/ec2-user/
 hooks:
   ApplicationStop:
     - location: scripts/stop_application.sh
