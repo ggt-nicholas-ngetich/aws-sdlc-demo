@@ -6,12 +6,12 @@ phases:
       python: 3.9
     commands:
       - python -m pip install --upgrade pip
-      - pip install -r requirements.txt
+      - pip install -r app/requirements.txt
 
   pre_build:
     commands:
       - echo "Running tests..."
-      - python -m pytest
+      - cd app && python -m pytest && cd ..
 
   build:
     commands:
