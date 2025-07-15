@@ -3,6 +3,9 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/app
+    overwrite: true
+  - source: /application.zip
+    destination: /home/ec2-user/app
 hooks:
   ApplicationStop:
     - location: scripts/stop_application.sh
@@ -13,7 +16,7 @@ hooks:
       timeout: 300
       runas: root
   AfterInstall:
-    - location: scripts/install_dependencies.sh
+    - location: scripts/extract_and_install.sh
       timeout: 300
       runas: root
   ApplicationStart:
