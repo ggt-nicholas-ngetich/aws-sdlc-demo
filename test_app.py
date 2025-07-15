@@ -10,4 +10,4 @@ def client():
 def test_hello_route(client):
     response = client.get('/')
     assert response.status_code == 200
-    assert b'Hello AWS CI/CD!' in response.data
+    assert b'Hello AWS CI/CD!!' in response.data
