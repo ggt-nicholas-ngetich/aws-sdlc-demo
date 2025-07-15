@@ -7,14 +7,14 @@ files:
     destination: /home/ec2-user/app/scripts
 hooks:
   ApplicationStop:
-    - location: scripts/stop_application.sh
+    - location: /home/ec2-user/app/scripts/stop_application.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: scripts/install_dependencies.sh
+    - location: /home/ec2-user/app/scripts/install_dependencies.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: scripts/start_application.sh
+    - location: /home/ec2-user/app/scripts/start_application.sh
       timeout: 300
       runas: root
