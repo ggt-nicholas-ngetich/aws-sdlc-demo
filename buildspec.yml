@@ -18,8 +18,9 @@ phases:
       - echo "Building application..."
 
 artifacts:
+  name: BuildArtifact.zip
   files:
     - appspec.yml
-    - scripts/**     # Ensure the full folder is included
-    - app/**         # Ensure the app/ folder is preserved
+    - scripts/**
+    - app/**
   discard-paths: no
