@@ -19,7 +19,7 @@ phases:
 
 artifacts:
   files:
-    - app/**/*
     - appspec.yml
-    - scripts/**/*
+    - scripts/**     # Ensure the full folder is included
+    - app/**         # Ensure the app/ folder is preserved
   discard-paths: no
