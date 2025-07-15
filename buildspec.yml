@@ -6,21 +6,19 @@ phases:
       python: 3.9
     commands:
       - python -m pip install --upgrade pip
-      - pip install -r app/requirements.txt
+      - pip install -r requirements.txt
 
   pre_build:
     commands:
       - echo "Running tests..."
-      - cd app && python -m pytest && cd ..
+      - python -m pytest
 
   build:
     commands:
       - echo "Building application..."
+      - zip -r application.zip *
 
 artifacts:
-  name: BuildArtifact.zip
   files:
-    - appspec.yml
-    - scripts/**
-    - app/**
-  discard-paths: no
+    - application.zip
+  discard-paths: yes
