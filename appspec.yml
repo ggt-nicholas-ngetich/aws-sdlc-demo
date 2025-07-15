@@ -5,11 +5,11 @@ files:
   - source: /
     destination: /home/ec2-user/
 hooks:
-  # ApplicationStop:
-  #   - location: scripts/stop_application.sh
-  #     timeout: 300
-  #     runas: root
-  #     ignoreApplicationStopFailures: true  # Add this to handle first deployment
+  ApplicationStop:
+    - location: scripts/stop_application.sh
+      timeout: 300
+      runas: root
+      ignoreApplicationStopFailures: true  # Add this to handle first deployment
   AfterInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300
