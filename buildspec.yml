@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - pip install -r requirements.txt
+  
+  pre_build:
+    commands:
+      - echo "Running tests..."
+      - pytest
+  
+  build:
+    commands:
+      - echo "Building application..."
+      - zip -r application.zip *
+
+artifacts:
+  files:
+    - application.zip
+    - appspec.yml
+    - scripts/*
